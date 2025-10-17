@@ -69,23 +69,25 @@
                 <Annotation Term="UI.LineItem">
                     <Collection>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Label" String="ProductID"/>
+                            <PropertyValue Property="Label" String="Product ID"/>
                             <PropertyValue Property="Value" Path="ProductID"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Label" String="ProductName"/>
+                            <PropertyValue Property="Label" String="Product Name"/>
                             <PropertyValue Property="Value" Path="ProductName"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Label" String="SupplierID"/>
+                            <PropertyValue Property="Label" String="Supplier ID"/>
                             <PropertyValue Property="Value" Path="SupplierID"/>
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Label" String="CategoryID"/>
+                            <PropertyValue Property="Label" String="Category ID"/>
                             <PropertyValue Property="Value" Path="CategoryID"/>
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Label" String="QuantityPerUnit"/>
+                            <PropertyValue Property="Label" String="Quantity Per Unit"/>
                             <PropertyValue Property="Value" Path="QuantityPerUnit"/>
                         </Record>
                     </Collection>
