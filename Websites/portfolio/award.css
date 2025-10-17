@@ -1,0 +1,67 @@
+/* Award Section Updates */
+#awards .panel {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Default two columns */
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+    align-items: start;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#awards .panel .details {
+    grid-column: span 2; /* Ensure text spans two columns */
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+#awards p.issued-text {
+    text-align: left;
+}
+
+#awards .panel img.award-img {
+    width: 160px;
+    height: auto;
+    margin: 0 10px;
+    transition: transform 0.3s ease-in-out;
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+#awards .panel img.award-img:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    #awards .panel {
+        grid-template-columns: repeat(2, 1fr); /* Maintain two columns */
+        width: 90%;
+        padding: 15px;
+    }
+
+    #awards .panel img.award-img {
+        width: 140px;
+    }
+
+    #awards p.issued-text {
+        text-align: left;
+    }
+
+    #awards .panel .details {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 480px) {
+    #awards .panel {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for images on phones */
+        width: 90%;
+        padding: 15px;
+    }
+
+    #awards .panel img.award-img {
+        width: 120px;
+    }
+}
+

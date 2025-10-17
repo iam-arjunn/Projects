@@ -1,0 +1,133 @@
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#Profile {
+    width: 15%;
+    max-width: 120px;
+    height: auto;
+    display: block;
+    align-items: center;
+    justify-self: center;
+    border-radius: 50%;
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+}
+
+h2 {
+    text-align: center;
+    position: relative;
+    display: block;
+    margin: 20px auto;
+    padding-bottom: 10px;
+    color: #fff;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 5px auto 0;
+}
+
+.panel {
+    width: 80%;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: start;
+    
+}
+
+.responsive-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .panel {
+        width: 90%;
+        padding: 15px;
+    }
+    .responsive-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .responsive-text {
+        font-size: 0.9rem;
+        text-align: left;
+    }
+}
+
+
+
+#about p {
+    text-align: justify;  /* Justify the paragraph text */
+    margin-top: 10px;
+}
+
+
+
+.typewriter-container {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white /* Yellow */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+    /* Center horizontally */
+    text-align: center;
+    width: 100%;      /* make container full width so text-align works */
+    margin-top: 1rem; /* spacing below name */
+  }
+  
+  /* blinking cursor */
+  #typed-text::after {
+    content: "|";
+    animation: blink 0.7s infinite;
+    color: white;
+  }
+  #typed-text{
+    text-decoration: underline  white;
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
+  
+  .image-wrapper {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 10px auto;
+  }
+  
+  .profile-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 0.3rem solid  white;
+    display: block;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+  }
+
+  

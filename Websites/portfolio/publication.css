@@ -1,0 +1,92 @@
+.publication {
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+}
+
+
+.publication h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0px;
+    color: #fff;
+    padding: 10px;
+}
+
+.publication p {
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 0px;
+    max-width: 900px;
+    text-align: justify;
+    padding: 10px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.publication button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.publication button:hover {
+    background-color: #cc5200;
+}
+
+@media (max-width: 768px) {
+    .publication h3 {
+        font-size: 1.5rem;
+    }
+    .publication  {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .publication p {
+        font-size: 1rem;
+    }
+
+    .publication button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .publication h3 {
+        font-size: 1.2rem;
+    }
+    .publication  {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .publication p {
+        font-size: 0.9rem;
+    }
+
+    .publication button {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+}
