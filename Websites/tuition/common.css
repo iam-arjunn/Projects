@@ -1,0 +1,123 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body and HTML setup */
+body, html {
+    height: 100%; /* Ensures the body takes up full height */
+    background-color: #f1f1f1; /* Soft neutral gray background */
+    display: flex;
+    flex-direction: column; /* Makes the page layout vertical */
+}
+
+/* Main wrapper: Ensures content takes up all space without pushing footer inside */
+#main-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Fills available space to push the footer down */
+}
+
+/* Header */
+#main-header {
+    background-color: #006f6d; /* Deep teal for a more inviting and fresh look */
+    color: #fff; /* White text for contrast */
+    padding: 50px 20px; /* Spacious header with large padding */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    position: relative;
+}
+
+#header-title {
+    font-size: 48px;
+    font-weight: 700; /* Bold title */
+    margin-bottom: 10px;
+    letter-spacing: 2px; /* Letter spacing for modern style */
+}
+
+#header-tagline {
+    font-size: 22px;
+    font-weight: 400; /* Lighter weight for tagline */
+    color: #f1c232; /* Soft gold for a warm, welcoming look */
+    margin-bottom: 20px;
+}
+
+/* Navigation */
+#main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+#main-nav a {
+    text-decoration: none;
+    color: #fff; /* White links */
+    font-size: 18px;
+    font-weight: 600; /* Semi-bold text for clarity */
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Active and Hover States */
+#main-nav a:hover {
+    background-color: #f1c232; /* Soft gold on hover */
+    color: #006f6d; /* Dark teal text on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover for interaction */
+}
+
+#main-nav a.active {
+    background-color: #f1c232; /* Active state background */
+    color: #006f6d; /* Dark teal text for active state */
+    font-weight: 700;
+}
+
+/* Footer */
+#footer {
+    background-color: #006f6d; /* Same as header for consistency */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    position: relative; /* Allows footer to be positioned at the bottom of the page */
+    width: 100%;
+}
+
+/* Footer Text */
+#footer p {
+    margin: 0;
+    font-weight: 400;
+}
+
+/* Smooth Scroll for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Styling for footer in all pages */
+#footer {
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow at top for depth */
+}
+
+/* Media Queries for Mobile and Tablets */
+@media (max-width: 768px) {
+    #header-title {
+        font-size: 36px; /* Smaller title on mobile */
+    }
+
+    #header-tagline {
+        font-size: 18px; /* Smaller tagline */
+    }
+
+    #main-nav {
+        flex-direction: column; /* Stack navigation links vertically */
+    }
+
+    #main-nav a {
+        font-size: 16px; /* Slightly smaller text for mobile */
+        padding: 10px;
+    }
+}

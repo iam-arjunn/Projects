@@ -1,0 +1,100 @@
+/* Home Page Styles */
+
+/* Main Content */
+#main-content {
+    flex-grow: 1;
+    background-color: #fff; /* White background for main content */
+    padding: 40px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border-radius: 10px;
+    margin: 40px auto; /* Centering content */
+    max-width: 1200px;
+    text-align: center;
+}
+
+/* Welcome Section */
+#welcome-section {
+    padding: 40px;
+    background-color: #f1f1f1; /* Light gray background for welcome section */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+#welcome-title {
+    font-size: 36px;
+    color: #006f6d; /* Deep teal for title */
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+#welcome-message {
+    font-size: 20px;
+    color: #333; /* Dark gray for text */
+    margin-bottom: 30px;
+    line-height: 1.6; /* Better readability */
+}
+
+#classroom-image {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Enroll Now Button */
+#enroll-button {
+    background-color: #006f6d; /* Soft gold button */
+    color: #fff; /* Dark teal text for the button */
+    font-size: 18px;
+    font-weight: 600;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Enroll Button Hover */
+#enroll-button:hover {
+    background-color: #f1c232; /* Dark teal on hover */
+    color: #006f6d; /* White text on hover */
+    transform: scale(1.05); /* Slight scale-up for engagement */
+}
+
+/* Footer */
+#footer {
+    background-color: #006f6d; /* Same deep teal for footer */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    width: 100%;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+#footer p {
+    margin: 0;
+}
+
+/* Media Queries for Mobile and Tablets */
+@media (max-width: 768px) {
+    #welcome-title {
+        font-size: 28px; /* Smaller title on mobile */
+    }
+
+    #welcome-message {
+        font-size: 18px; /* Smaller message */
+    }
+
+    #enroll-button {
+        font-size: 16px; /* Smaller button text on mobile */
+        padding: 12px 25px;
+    }
+
+    #classroom-image {
+        max-width: 90%; /* Adjust image size on mobile */
+        margin-top: 20px;
+    }
+}

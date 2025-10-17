@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aravind Tuition Center</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="common.css">
+</head>
+<body>
+    <header id="main-header">
+        <h1 id="header-title">Aravind Tuition Center</h1>
+        <p id="header-tagline">Empowering Young Minds, Building Bright Futures!</p>
+        <nav id="main-nav">
+            <a href="home.html" id="home-link">Home</a>
+            <a href="about.html" id="about-link">About Us</a>
+            <a href="courses.html" id="courses-link">Courses</a>
+            <a href="contact.html" id="contact-link" class="active">Contact Us</a>
+        </nav>
+    </header>
+
+    <section class="contact-details-section">
+        <h1 id="Contact_Details">Contact Details</h1>
+
+        <!-- Contact Information Box using Flexbox -->
+        <div class="contact-info-box">
+            <!-- Phone -->
+            <div class="contact-item">
+                <div class="field">
+                    <p><strong class="yellow">Phone:</strong></p>
+                </div>
+                <div class="details">
+                    <p id="phone-number">+91 123 456 7890</p>
+                </div>
+                <button class="copy-button" id="copy-phone" onclick="copyToClipboard('phone-number', 'copy-phone')">Copy</button>
+            </div>
+
+            <!-- Email -->
+            <div class="contact-item">
+                <div class="field">
+                    <p><strong class="yellow">Email:</strong></p>
+                </div>
+                <div class="details">
+                    <p id="email-address">contact@aravindtuition.com</p>
+                </div>
+                <button class="copy-button" id="copy-email" onclick="copyToClipboard('email-address', 'copy-email')">Copy</button>
+            </div>
+
+            <!-- Location -->
+            <div class="contact-item">
+                <div class="field">
+                    <p><strong class="yellow">Location:</strong></p>
+                </div>
+                <div class="details">
+                    <p id="location">Aravind Tuition Center, 1234 Education Road, Coimbatore, Tamil Nadu</p>
+                </div>
+                <button class="copy-button" id="copy-location" onclick="copyToClipboard('location', 'copy-location')">Copy</button>
+            </div>
+        </div>
+
+        <!-- Google Map Embed -->
+        <div class="map-section">
+            <iframe src="https://www.google.com/maps/embed/v1/place?q=Aravind+Tuition+Center,+Coimbatore,+Tamil+Nadu&key=YOUR_GOOGLE_MAPS_API_KEY" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <!-- Button below the map -->
+        <div class="map-button-section">
+            <button onclick="openMap()">View on Google Maps</button>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <p>&copy; 2024 Aravind Tuition Center. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Function to copy text to clipboard and change button text to "Copied!"
+        function copyToClipboard(id, buttonId) {
+            var text = document.getElementById(id).textContent || document.getElementById(id).innerText;
+            navigator.clipboard.writeText(text).then(function() {
+                // Change button text to "Copied!"
+                var button = document.getElementById(buttonId);
+                button.textContent = 'Copied!';
+
+                // Reset button text to "Copy" after 5 seconds
+                setTimeout(function() {
+                    button.textContent = 'Copy';
+                }, 5000);
+            });
+        }
+
+        function openMap() {
+            window.open('https://www.google.com/maps?q=Aravind+Tuition+Center,+Coimbatore,+Tamil+Nadu', '_blank');
+        }
+    </script>
+</body>
+</html>

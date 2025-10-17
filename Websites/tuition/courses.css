@@ -1,0 +1,159 @@
+/* General Body and Layout */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Styling */
+#main-header {
+    background-color: #006f6d;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+#header-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0;
+}
+
+#header-tagline {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+#main-nav {
+    margin-top: 20px;
+}
+
+#main-nav a {
+    margin: 0 15px;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Course Section */
+.course-container {
+    background-color: white;
+    padding: 40px 20px;
+    margin: 40px auto;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Course Title */
+.course-title {
+    font-size: 32px;
+    color: #006f6d;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+/* Course Grid */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Course Cards */
+.course-card {
+    background-color: #006f6d;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    text-align: left;
+    height: 100%;
+    position: relative;
+}
+
+
+/* Course Card Hover Effect */
+.course-card:hover {
+    transform: translateY(-10px);
+    background-color: #f1c232; /* Soft gold color on hover */
+    color: #006f6d; /* Change text color to dark teal */
+}
+
+/* Course Card Title */
+.course-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* Course Description */
+.course-description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Fee Information (Hidden by Default) */
+.fee-info {
+    display: none;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.course-card:hover .fee-info {
+    display: block;
+}
+
+
+/* Enroll Button */
+#enroll-button {
+    background-color: #006f6d;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 30px;
+}
+
+#enroll-button:hover {
+    background-color: #f1c232;
+    color: #006f6d;
+}
+
+/* Footer */
+#footer {
+    background-color: #006f6d;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .course-title {
+        font-size: 28px;
+    }
+
+    .course-grid {
+        grid-template-columns: 1fr; /* Stack courses vertically on smaller screens */
+    }
+
+    .course-card {
+        width: 100%;
+    }
+}
+

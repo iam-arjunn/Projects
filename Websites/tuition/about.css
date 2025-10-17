@@ -1,0 +1,84 @@
+/* About Page Wrapper */
+.about-wrapper {
+    background-color: #fff;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+/* Title Style */
+.about-title {
+    font-size: 36px; /* Matches home.css title */
+    color: #006f6d; /* Deep teal color */
+    font-weight: 700;
+    margin-bottom: 60px; /* Space between title and tiles */
+    text-align: center;
+}
+
+/* About Section Styling */
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 0; /* No gap between tiles */
+    flex-wrap: nowrap; /* Prevent tiles from wrapping */
+}
+
+/* Individual Tiles */
+.about-tile, .mission-tile, .vision-tile {
+    background-color: #006f6d; /* Deep teal background */
+    color: #fff;
+    padding: 20px;
+    margin: 10px 0;  /* Space between tiles when stacked */
+    border-radius: 10px;
+    width: 32%; /* Set width for three tiles in one row */
+    box-sizing: border-box;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    height: 250px; /* Fixed height for consistency */
+}
+
+/* Tile Hover Effect */
+.about-tile:hover, .mission-tile:hover, .vision-tile:hover {
+    transform: translateY(-10px);
+    background-color: #f1c232; /* Soft gold on hover */
+    color: #006f6d; /* Dark teal text on hover */
+    z-index: 1;
+}
+
+/* Heading inside tiles */
+.about-tile h3, .mission-tile h3, .vision-tile h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+#About_Aravind {
+    font-size: 36px;
+    color: #006f6d; /* Deep teal for title */
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Paragraph inside tiles */
+.about-tile p, .mission-tile p, .vision-tile p {
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column; /* Stack tiles vertically on smaller screens */
+        align-items: center;
+    }
+
+    .about-tile, .mission-tile, .vision-tile {
+        width: 100%; /* Full width on mobile */
+        margin-bottom: 20px;
+    }
+}
