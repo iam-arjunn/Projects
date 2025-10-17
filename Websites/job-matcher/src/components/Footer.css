@@ -1,0 +1,4 @@
+.site-footer { padding:2rem 0; border-top:1px solid rgba(255,255,255,0.03); margin-top:2.5rem }
+.footer-grid { display:flex; gap:2rem; max-width:1100px; margin:0 auto; align-items:flex-start }
+.site-footer h4, .site-footer h5 { margin:0 0 0.5rem }
+.site-footer .muted { color:var(--muted) }

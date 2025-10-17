@@ -1,0 +1,18 @@
+.hero { margin: 0 auto 2rem; padding: 2rem 0 }
+.hero__inner { display:grid; grid-template-columns:1fr; gap:1rem; align-items:start }
+.hero__content h1 { font-size:2rem; margin:0 0 0.5rem }
+.hero__content p { margin:0 0 1rem; color:var(--muted) }
+.search-row { display:grid; grid-template-columns: 1fr 1fr auto; gap:var(--gap); align-items:end; margin-bottom:1rem }
+.search-col { display:flex; flex-direction:column }
+.search-col label { font-size:0.9rem; color:var(--muted); margin-bottom:0.35rem }
+.search-col input { padding:0.65rem 0.75rem; border-radius:var(--radius); border:1px solid rgba(255,255,255,0.04); background:var(--card); color:var(--text) }
+.search-actions { display:flex; gap:0.5rem; align-items:center }
+.search-login { display:flex; gap:0.5rem; }
+
+.hero__side h3 { margin: 0 0 0.5rem; }
+.categories { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.chip { background: rgba(255,255,255,0.04); border: none; color: #fff; padding: 0.45rem 0.75rem; border-radius: 999px; cursor: pointer; }
+.recent-jobs { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.recent-jobs .muted { color: #cfcfcf; font-size: 0.9rem; }
+
+@media (max-width:900px){ .hero__inner{ grid-template-columns:1fr } .search-row{ grid-template-columns:1fr } .search-actions{ justify-content:space-between } }

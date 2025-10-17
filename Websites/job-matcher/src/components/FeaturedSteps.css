@@ -1,0 +1,10 @@
+.steps { padding: 2rem 0 }
+.steps .container { max-width: 1100px; margin: 0 auto }
+.steps h2 { margin: 0 0 0.35rem }
+.steps .muted { color: var(--muted) }
+.steps__grid { display:flex; gap:var(--gap); margin-top:1rem }
+.step { background: rgba(255,255,255,0.02); padding:1rem; border-radius:var(--radius); flex:1; text-align:center }
+.step .icon { font-size:2rem; margin-bottom:0.5rem }
+.step__icon { width:48px; height:48px; object-fit:contain; display:block; margin:0 auto 0.5rem }
+
+@media (max-width:700px){ .steps__grid{ flex-direction:column } }
