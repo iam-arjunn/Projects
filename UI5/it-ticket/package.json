@@ -5,9 +5,11 @@
   "dependencies": {
     "@cap-js/postgres": "^2.0.5",
     "@sap/cds": "^9.4.3",
+    "@supabase/supabase-js": "^2.75.1",
     "dotenv": "^17.2.3",
     "express": "^4.21.2",
-    "pg": "^8.16.3"
+    "pg": "^8.16.3",
+    "uuid": "^13.0.0"
   },
   "devDependencies": {
     "@sap/cds-dk": "^9"
