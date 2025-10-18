@@ -1,0 +1,21 @@
+{
+    "exportTime": "2025-10-18 20:21:31.725398596",
+    "destination": {
+        "Name": "bpmworkflowruntime_mail",
+        "Type": "MAIL",
+        "ProxyType": "Internet",
+        "Authentication": "BasicAuthentication",
+        "mail.smtp.host": "smtp.gmail.com",
+        "mail.smtp.port": "587",
+        "mail.transport.protocol": "smtp",
+        "mail.smtp.starttls.required": "true",
+        "mail.smtp.starttls.enable": "true",
+        "mail.smtp.auth": "true",
+        "mail.smtp.from": "service@a2x.com",
+        "mail.smtp.ssl.checkserveridentity": "true",
+        "mail.bpm.send.disabled": "false",
+        "mail.description": "This destination used for trigger mails",
+        "mail.user": "arjun.n.social.media@gmail.com",
+        "mail.password": "<removed>"
+    }
+}
