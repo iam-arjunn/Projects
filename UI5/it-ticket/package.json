@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "A simple CAP project.",
   "dependencies": {
+    "@cap-js/postgres": "^2",
     "@sap/cds": "^9",
+    "dotenv": "^17.2.3",
     "express": "^4",
-    "@cap-js/postgres": "^2"
+    "pg": "^8.16.3"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^2",
