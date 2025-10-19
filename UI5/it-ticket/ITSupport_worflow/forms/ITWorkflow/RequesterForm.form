@@ -22,19 +22,19 @@
                         "properties": {
                             "items": [
                                 {
-                                    "value": "New Laptop",
+                                    "value": "NewLaptop",
                                     "displayValue": "New Laptop"
                                 },
                                 {
-                                    "value": "Software Installation",
+                                    "value": "SoftwareInstallation",
                                     "displayValue": "Software Installation"
                                 },
                                 {
-                                    "value": "Hardware Problem",
+                                    "value": "HardwareProblem",
                                     "displayValue": "Hardware Problem"
                                 },
                                 {
-                                    "value": "System Update",
+                                    "value": "SystemUpdate",
                                     "displayValue": "System Update"
                                 },
                                 {
@@ -47,10 +47,10 @@
                     "constraints": {
                         "required": true,
                         "enum": [
-                            "New Laptop",
-                            "Software Installation",
-                            "Hardware Problem",
-                            "System Update",
+                            "NewLaptop",
+                            "SoftwareInstallation",
+                            "HardwareProblem",
+                            "SystemUpdate",
                             "Others"
                         ]
                     }
