@@ -5,6 +5,86 @@
     "revision": "1",
     "type": "task",
     "readOnly": false,
-    "content": [],
-    "decisions": []
+    "content": [
+        {
+            "id": "kindly_provide_following_details",
+            "type": "section",
+            "title": "kindly provide Following Details",
+            "content": [
+                {
+                    "id": "type_",
+                    "type": "string",
+                    "label": "Ticket Type",
+                    "readOnly": true,
+                    "value": "${context.ticketType}",
+                    "control": {
+                        "type": "Dropdown",
+                        "properties": {
+                            "items": [
+                                {
+                                    "value": "New Laptop",
+                                    "displayValue": "New Laptop"
+                                },
+                                {
+                                    "value": "Software Installation",
+                                    "displayValue": "Software Installation"
+                                },
+                                {
+                                    "value": "Hardware Problem",
+                                    "displayValue": "Hardware Problem"
+                                },
+                                {
+                                    "value": "System Update",
+                                    "displayValue": "System Update"
+                                },
+                                {
+                                    "value": "Others",
+                                    "displayValue": "Others"
+                                }
+                            ]
+                        }
+                    },
+                    "constraints": {
+                        "required": true,
+                        "enum": [
+                            "New Laptop",
+                            "Software Installation",
+                            "Hardware Problem",
+                            "System Update",
+                            "Others"
+                        ]
+                    }
+                },
+                {
+                    "id": "description",
+                    "type": "string",
+                    "label": "Description",
+                    "placeholder": "Provide the description",
+                    "readOnly": false,
+                    "value": "${context.description}",
+                    "control": {
+                        "type": "TextArea",
+                        "properties": {
+                            "height": "medium"
+                        }
+                    },
+                    "constraints": {
+                        "required": false
+                    }
+                }
+            ]
+        }
+    ],
+    "decisions": [
+        {
+            "id": "submit",
+            "text": "Submit",
+            "decisionType": "positive"
+        },
+        {
+            "id": "cancel",
+            "text": "Cancel",
+            "decisionType": "negative"
+        }
+    ]
 }
