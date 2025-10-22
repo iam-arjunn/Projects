@@ -2,7 +2,7 @@
 name: Deploy to SAP BTP
 
 # ─────────────────────────────────────────────
-# 1️⃣ When should this workflow run
+# When should this workflow run
 # ─────────────────────────────────────────────
 on:
   push:
@@ -16,14 +16,14 @@ on:
         default: 'warning'
 
 # ─────────────────────────────────────────────
-# 2️⃣ Prevent overlapping runs
+# Prevent overlapping runs
 # ─────────────────────────────────────────────
 concurrency:
   group: 'ci-btp-deploy'
   cancel-in-progress: true
 
 # ─────────────────────────────────────────────
-# 3️⃣ Define jobs
+# Define jobs
 # ─────────────────────────────────────────────
 jobs:
   build:
@@ -57,7 +57,7 @@ jobs:
           path: ./target/your_project_name.mtar
 
   # ─────────────────────────────────────────────
-  # 4️⃣ Deploy to BTP Cloud Foundry
+  # Deploy to BTP Cloud Foundry
   # ─────────────────────────────────────────────
   deploy:
     runs-on: ubuntu-22.04
