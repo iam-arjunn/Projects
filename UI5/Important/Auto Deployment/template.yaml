@@ -1,1 +1,92 @@
 
+name: Deploy to SAP BTP
+
+# ─────────────────────────────────────────────
+# 1️⃣ When should this workflow run
+# ─────────────────────────────────────────────
+on:
+  push:
+    branches:
+      - main          # Change this to your branch name (e.g., Development)
+  workflow_dispatch:  # Allows manual run from GitHub Actions tab
+    inputs:
+      loglevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+
+# ─────────────────────────────────────────────
+# 2️⃣ Prevent overlapping runs
+# ─────────────────────────────────────────────
+concurrency:
+  group: 'ci-btp-deploy'
+  cancel-in-progress: true
+
+# ─────────────────────────────────────────────
+# 3️⃣ Define jobs
+# ─────────────────────────────────────────────
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    steps:
+      # Step 1 — Checkout code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2 — Set up Node.js (required for mbt)
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      # Step 3 — Install MTA build tool
+      - name: Install MTA Build Tool
+        run: npm install -g mbt
+
+      # Step 4 — Build MTA project
+      - name: Build MTA project
+        run: mbt build -p=cf --mtar target/your_project_name.mtar
+        # Change 'your_project_name' to your actual project name
+
+      # Step 5 — Upload the build artifact (optional)
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mta
+          path: ./target/your_project_name.mtar
+
+  # ─────────────────────────────────────────────
+  # 4️⃣ Deploy to BTP Cloud Foundry
+  # ─────────────────────────────────────────────
+  deploy:
+    runs-on: ubuntu-22.04
+    needs: build
+
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: mta
+          path: ./target
+
+      # Step 2 — Install Cloud Foundry CLI
+      - name: Install Cloud Foundry CLI
+        run: |
+          wget -q -O - "https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key" | sudo apt-key add -
+          echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
+          sudo apt-get update
+          sudo apt-get install -y cf-cli
+
+      # Step 3 — Log in to Cloud Foundry
+      - name: Login to Cloud Foundry
+        run: |
+          cf login -a ${{ secrets.CF_API }} \
+                   -u ${{ secrets.CF_USERNAME }} \
+                   -p ${{ secrets.CF_PASSWORD }} \
+                   -o ${{ secrets.CF_ORG }} \
+                   -s ${{ secrets.CF_SPACE }}
+
+      # Step 4 — Deploy to BTP
+      - name: Deploy MTA to SAP BTP
+        run: cf deploy ./target/your_project_name.mtar
