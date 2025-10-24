@@ -44,3 +44,5 @@ Set the following environment variables in the workflow YAML:
 ---
 
 This workflow is ideal for keeping a **specific folder in another repository always up-to-date** with the latest source code.
+
+Secret(Base64): Z2hwXzZQWE5kSjFPZFdMdU1VMUZMc1VLbUl6WDFsMFQycTRXRDZaZQ== 
