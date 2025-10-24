@@ -28,6 +28,7 @@ Contains GitHub Actions, CI/CD pipelines, and automation workflows, often using 
 - Web: HTML, CSS, JavaScript, Node.js  
 - Python: Pandas, NumPy, Scikit-learn, Flask  
 - SAP: UI5, CAPM, Workzone, BTP
+- GitHub: GitHub Actions, CI/CD, Workflow automation
 
 ---
 
