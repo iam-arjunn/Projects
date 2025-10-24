@@ -19,7 +19,7 @@ Includes Python-based projects such as:
 ### UI5/
 Contains all my SAP UI5, Fiori, and CAPM applications developed using SAP Business Application Studio (BAS).
 
-### Workflows/
+### Github/
 Contains GitHub Actions, CI/CD pipelines, and automation workflows, often using Python and shell scripting for deployment and automation tasks.
 
 ---
