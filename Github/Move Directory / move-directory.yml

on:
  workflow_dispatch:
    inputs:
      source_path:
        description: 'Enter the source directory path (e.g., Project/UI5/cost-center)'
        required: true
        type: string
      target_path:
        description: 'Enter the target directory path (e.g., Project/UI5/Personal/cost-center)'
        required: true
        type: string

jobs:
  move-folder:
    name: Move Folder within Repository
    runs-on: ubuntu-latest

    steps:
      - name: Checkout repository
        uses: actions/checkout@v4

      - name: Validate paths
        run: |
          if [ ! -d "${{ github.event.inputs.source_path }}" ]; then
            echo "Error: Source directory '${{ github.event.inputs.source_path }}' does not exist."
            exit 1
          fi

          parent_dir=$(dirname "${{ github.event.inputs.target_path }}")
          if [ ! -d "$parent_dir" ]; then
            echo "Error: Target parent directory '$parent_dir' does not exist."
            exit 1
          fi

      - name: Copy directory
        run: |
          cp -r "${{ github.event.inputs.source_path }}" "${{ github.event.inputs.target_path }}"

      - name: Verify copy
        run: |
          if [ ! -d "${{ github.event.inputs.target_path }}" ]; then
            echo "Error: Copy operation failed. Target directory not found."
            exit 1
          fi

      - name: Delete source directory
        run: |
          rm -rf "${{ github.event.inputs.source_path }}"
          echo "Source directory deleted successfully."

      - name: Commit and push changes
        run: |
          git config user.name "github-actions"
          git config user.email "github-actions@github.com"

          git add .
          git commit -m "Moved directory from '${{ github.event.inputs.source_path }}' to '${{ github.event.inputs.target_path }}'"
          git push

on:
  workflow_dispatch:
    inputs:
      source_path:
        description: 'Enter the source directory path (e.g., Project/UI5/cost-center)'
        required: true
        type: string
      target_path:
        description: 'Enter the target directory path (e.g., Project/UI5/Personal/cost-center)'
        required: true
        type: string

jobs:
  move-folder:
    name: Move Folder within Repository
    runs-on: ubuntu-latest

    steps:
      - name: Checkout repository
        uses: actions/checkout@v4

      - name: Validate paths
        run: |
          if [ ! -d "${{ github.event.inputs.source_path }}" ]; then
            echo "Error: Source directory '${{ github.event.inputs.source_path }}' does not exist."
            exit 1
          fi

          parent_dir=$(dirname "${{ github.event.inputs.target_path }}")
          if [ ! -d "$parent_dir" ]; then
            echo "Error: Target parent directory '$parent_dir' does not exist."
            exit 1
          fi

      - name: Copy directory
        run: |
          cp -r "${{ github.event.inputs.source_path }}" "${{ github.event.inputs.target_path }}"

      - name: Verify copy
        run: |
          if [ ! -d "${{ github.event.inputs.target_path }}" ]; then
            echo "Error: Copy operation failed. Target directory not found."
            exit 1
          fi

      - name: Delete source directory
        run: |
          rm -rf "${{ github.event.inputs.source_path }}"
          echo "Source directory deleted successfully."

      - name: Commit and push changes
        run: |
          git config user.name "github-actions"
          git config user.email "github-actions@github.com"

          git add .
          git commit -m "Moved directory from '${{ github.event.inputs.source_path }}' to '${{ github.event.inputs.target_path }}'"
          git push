@@ -1,0 +1,60 @@
+name: Move Directory
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_path:
+        description: 'Enter the source directory path (e.g., Project/UI5/cost-center)'
+        required: true
+        type: string
+      target_path:
+        description: 'Enter the target directory path (e.g., Project/UI5/Personal/cost-center)'
+        required: true
+        type: string
+
+jobs:
+  move-folder:
+    name: Move Folder within Repository
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate paths
+        run: |
+          if [ ! -d "${{ github.event.inputs.source_path }}" ]; then
+            echo "Error: Source directory '${{ github.event.inputs.source_path }}' does not exist."
+            exit 1
+          fi
+
+          parent_dir=$(dirname "${{ github.event.inputs.target_path }}")
+          if [ ! -d "$parent_dir" ]; then
+            echo "Error: Target parent directory '$parent_dir' does not exist."
+            exit 1
+          fi
+
+      - name: Copy directory
+        run: |
+          cp -r "${{ github.event.inputs.source_path }}" "${{ github.event.inputs.target_path }}"
+
+      - name: Verify copy
+        run: |
+          if [ ! -d "${{ github.event.inputs.target_path }}" ]; then
+            echo "Error: Copy operation failed. Target directory not found."
+            exit 1
+          fi
+
+      - name: Delete source directory
+        run: |
+          rm -rf "${{ github.event.inputs.source_path }}"
+          echo "Source directory deleted successfully."
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git add .
+          git commit -m "Moved directory from '${{ github.event.inputs.source_path }}' to '${{ github.event.inputs.target_path }}'"
+          git push
