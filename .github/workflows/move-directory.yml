@@ -11,7 +11,7 @@ on:
         required: true
 
 jobs:
-  copy-directory-contents:
+  moving directory:
     runs-on: ubuntu-latest
 
     steps:
