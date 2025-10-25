@@ -11,7 +11,7 @@ on:
         required: true
 
 jobs:
-  moving directory:
+  moving-directory:
     runs-on: ubuntu-latest
 
     steps:
