@@ -1,0 +1,60 @@
+name: Move Directory
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_path:
+        description: 'Enter source path (relative to repo root)'
+        required: true
+      target_path:
+        description: 'Enter target path (relative to repo root)'
+        required: true
+
+jobs:
+  moving-directory:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository using PAT
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.MOVE_FOLDER }}
+
+      - name: Validate source directory
+        run: |
+          if [ ! -d "${{ github.event.inputs.source_path }}" ]; then
+            echo "Error: Source directory does not exist."
+            exit 1
+          fi
+
+      - name: Validate target directory
+        run: |
+          if [ ! -d "${{ github.event.inputs.target_path }}" ]; then
+            echo "Error: Target directory does not exist."
+            exit 1
+          fi
+
+      - name: Prevent overwriting existing files
+        run: |
+          if [ "$(ls -A "${{ github.event.inputs.source_path }}")" == "" ]; then
+            echo "Error: Source directory is empty."
+            exit 1
+          fi
+
+      - name: Copy all contents from source to target
+        run: |
+          cp -r "${{ github.event.inputs.source_path }}/." "${{ github.event.inputs.target_path }}/"
+
+      - name: Delete source directory
+        run: |
+          rm -rf "${{ github.event.inputs.source_path }}"
+
+      - name: Commit and push changes using PAT
+        env:
+          PAT: ${{ secrets.MOVE_FOLDER }}
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add .
+          git commit -m "Copied contents from ${{ github.event.inputs.source_path }} to ${{ github.event.inputs.target_path }}" || echo "No changes to commit"
+          git push https://x-access-token:$PAT@github.com/${{ github.repository }}.git
